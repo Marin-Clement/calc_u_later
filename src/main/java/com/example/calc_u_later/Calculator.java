@@ -7,12 +7,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Calculator extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(Calculator.class.getResource("calc-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 300, 300);
+        scene.getStylesheets().add(Calculator.class.getResource("calc-style.css").toExternalForm());
+        stage.setResizable(false);
+        stage.setTitle("Calc-U-Later");
         stage.setScene(scene);
         stage.show();
     }

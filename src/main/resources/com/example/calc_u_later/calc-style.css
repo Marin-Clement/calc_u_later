@@ -1,0 +1,52 @@
+.calculator {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20;
+    -fx-border-radius: 5;
+}
+
+.result-field {
+    -fx-font-size: 18px;
+    -fx-max-width: 300px;
+    -fx-pref-height: 50;
+    -fx-background-color: #ffffff;
+    -fx-prompt-text-fill: #808080;
+    -fx-padding: 5;
+    -fx-border-radius: 5;
+    -fx-cursor: cursor;
+}
+
+.number-button {
+    -fx-font-size: 16px;
+    -fx-pref-width: 50;
+    -fx-pref-height: 50;
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #000000;
+    -fx-cursor: hand;
+}
+
+.operation-button {
+    -fx-font-size: 16px;
+    -fx-pref-width: 50;
+    -fx-pref-height: 50;
+    -fx-background-color: #ff9933;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.equals-button {
+    -fx-font-size: 16px;
+    -fx-pref-width: 50;
+    -fx-pref-height: 50;
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.clear-button {
+    -fx-font-size: 16px;
+    -fx-pref-width: 50;
+    -fx-pref-height: 50;
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
