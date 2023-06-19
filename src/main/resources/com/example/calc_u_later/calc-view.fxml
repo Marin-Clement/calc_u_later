@@ -1,32 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="gridPane" fx:controller="com.example.calc_u_later.CalculatorController" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" hgap="10" vgap="10" styleClass="calculator">
+<GridPane fx:id="gridPane" alignment="CENTER" hgap="10" styleClass="calculator" stylesheets="@calc-style.css" vgap="10" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calc_u_later.CalculatorController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
 
-    <TextField fx:id="resultField" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" promptText="Enter a number" editable="false" maxWidth="130" styleClass="result-field" />
+    <!-- Display -->
+    <TextField fx:id="display" editable="false" styleClass="display-field" GridPane.columnIndex="0" GridPane.columnSpan="6" />
 
-    <Button text="1" onAction="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="number-button" />
-    <Button text="2" onAction="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="number-button" />
-    <Button text="3" onAction="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="number-button" />
-    <Button text="+" onAction="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="operation-button"/>
+    <!-- Number Buttons -->
+    <Button onAction="#handleButtonAction"  styleClass="number-button" text="7" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="8" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="9" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="4" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="5" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="6" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="1" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="2" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="3" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+    <Button onAction="#handleButtonAction" styleClass="number-button" text="." GridPane.columnIndex="2" GridPane.rowIndex="5" />
 
-    <Button text="4" onAction="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="number-button" />
-    <Button text="5" onAction="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="number-button" />
-    <Button text="6" onAction="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="number-button" />
-    <Button text="-" onAction="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="2" styleClass="operation-button"/>
+    <!-- Operator Buttons -->
+    <Button onAction="#handleButtonAction" styleClass="operator-button" text="+" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonAction" styleClass="operator-button" text="-" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonAction" styleClass="operator-button" text="*" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonAction" styleClass="operator-button" text="/" GridPane.columnIndex="5" GridPane.rowIndex="5" />
 
-    <Button text="7" onAction="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="number-button" />
-    <Button text="8" onAction="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="number-button" />
-    <Button text="9" onAction="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="3" styleClass="number-button" />
-    <Button text="*" onAction="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="3" styleClass="operation-button"/>
+    <!-- Function Buttons -->
+    <Button onAction="#handleButtonAction" styleClass="function-button" text="=" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+    <Button onAction="#handleButtonAction" styleClass="function-button" text="CE" GridPane.columnIndex="5" GridPane.rowIndex="1" />
 
-    <Button text="0" onAction="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="number-button"/>
-    <Button text="." onAction="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="number-button"/>
-    <Button text="=" onAction="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="4" styleClass="equals-button"/>
-    <Button text="/" onAction="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="4" styleClass="operation-button"/>
+    <!-- Other Buttons -->
+    <Button onAction="#handleButtonAction" styleClass="other-button" text="(" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonAction" styleClass="other-button" text=")" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonAction" styleClass="other-button" text="P" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonAction" styleClass="other-button" text="M+" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonAction" styleClass="other-button" text="MR" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonAction" styleClass="other-button" text="MC" GridPane.columnIndex="0" GridPane.rowIndex="3" />
 
-    <Button text="C" onAction="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass="clear-button"/>
+    <!-- Scientific Buttons -->
+    <Button onAction="#handleButtonAction" styleClass="scientific-button" text="sin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonAction" styleClass="scientific-button" text="cos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonAction" styleClass="scientific-button" text="tan" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonAction" styleClass="scientific-button" text="sqrt" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Button onAction="#handleButtonAction" styleClass="scientific-button" text="sqr" GridPane.columnIndex="0" GridPane.rowIndex="5" />
 
+    <!-- Logarithmic Buttons -->
+    <Button onAction="#handleButtonAction" styleClass="scientific-button" text="ln" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonAction" styleClass="scientific-button" text="log" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <!-- Conversion Buttons -->
+    <Button onAction="#handleButtonAction" styleClass="conversion-button" text="Converter" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="6" />
 </GridPane>

@@ -1,71 +1,139 @@
 package com.example.calc_u_later;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.util.Duration;
+
+import java.util.EmptyStackException;
+import java.util.Stack;
 
 public class CalculatorController {
 
     @FXML
-    private TextField resultField;
+    private TextField display;
 
-    private StringBuilder inputBuffer;
+    private Stack<Double> numberStack;
+    private Stack<String> operatorStack;
+    private boolean decimalClicked;
 
-    public void initialize() {
-        inputBuffer = new StringBuilder();
+    @FXML
+    private void initialize() {
+        numberStack = new Stack<>();
+        operatorStack = new Stack<>();
+        decimalClicked = false;
     }
 
     @FXML
-    private void handleButtonClick(ActionEvent event) {
-        Button clickedButton = (Button) event.getSource();
-        String buttonText = clickedButton.getText();
+    private void handleButtonAction(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        String buttonText = button.getText();
 
         switch (buttonText) {
-            case "C" -> {
-                inputBuffer.setLength(0);
-                resultField.setText("");
-            }
-            case "=" -> {
-                resultField.setText(String.valueOf(calculateResult()));
-                inputBuffer.setLength(0);
-            }
-            default -> {
-                inputBuffer.append(buttonText);
-                resultField.setText(inputBuffer.toString());
-            }
+            case "=":
+                calculate();
+                break;
+            case "CE":
+                clearDisplay();
+                break;
+            case ".":
+                handleDecimal();
+                break;
+            default:
+                appendToDisplay(buttonText);
+                break;
         }
-
-        // Create a scale animation for the clicked button
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(200), clickedButton);
-        scaleTransition.setFromX(0.8);
-        scaleTransition.setFromY(0.8);
-        scaleTransition.setToX(1.0);
-        scaleTransition.setToY(1.0);
-        scaleTransition.play();
-
-        // Create a fade animation for the resultField
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), resultField);
-        fadeTransition.setFromValue(0.0);
-        fadeTransition.setToValue(1.0);
-        fadeTransition.play();
     }
 
+    private void calculate() {
+        String input = display.getText();
 
-    private double calculateResult() {
-        String input = inputBuffer.toString();
-        String[] operands = input.split("[+\\-*/]");
-        String operator = input.replaceAll("[0-9.]", "");
+        if (input.isEmpty()) {
+            return;
+        }
 
-        return switch (operator) {
-            case "+" -> Double.parseDouble(operands[0]) + Double.parseDouble(operands[1]);
-            case "-" -> Double.parseDouble(operands[0]) - Double.parseDouble(operands[1]);
-            case "*" -> Double.parseDouble(operands[0]) * Double.parseDouble(operands[1]);
-            case "/" -> Double.parseDouble(operands[0]) / Double.parseDouble(operands[1]);
-            default -> 0.0;
-        };
+        String[] tokens = input.split(" ");
+
+        for (String token : tokens) {
+            if (isNumber(token)) {
+                numberStack.push(Double.parseDouble(token));
+            } else if (isOperator(token)) {
+                while (!operatorStack.isEmpty() && hasHigherPrecedence(operatorStack.peek(), token)) {
+                    evaluateOperation();
+                }
+                operatorStack.push(token);
+            } else if (token.equals("(")) {
+                operatorStack.push(token);
+            } else if (token.equals(")")) {
+                while (!operatorStack.isEmpty() && !operatorStack.peek().equals("(")) {
+                    evaluateOperation();
+                }
+                operatorStack.pop();
+            }
+        }
+    }
+
+    private boolean isNumber(String token) {
+        try {
+            Double.parseDouble(token);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private boolean isOperator(String token) {
+        return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
+    }
+
+    private boolean hasHigherPrecedence(String op1, String op2) {
+        return (op2.equals("*") || op2.equals("/")) && !op1.equals("(");
+    }
+
+    private void evaluateOperation() {
+        double operand2 = numberStack.pop();
+        double operand1 = numberStack.pop();
+        String operator = operatorStack.pop();
+        double result = 0;
+
+        switch (operator) {
+            case "+":
+                result = operand1 + operand2;
+                break;
+            case "-":
+                result = operand1 - operand2;
+                break;
+            case "*":
+                result = operand1 * operand2;
+                break;
+            case "/":
+                if (operand2 != 0) {
+                    result = operand1 / operand2;
+                } else {
+                    display.setText("Error");
+                    return;
+                }
+                break;
+        }
+
+        numberStack.push(result);
+    }
+
+    private void clearDisplay() {
+        display.clear();
+        numberStack.clear();
+        operatorStack.clear();
+        decimalClicked = false;
+    }
+
+    private void handleDecimal() {
+        if (!decimalClicked) {
+            appendToDisplay(".");
+            decimalClicked = true;
+        }
+    }
+
+    private void appendToDisplay(String text) {
+        display.appendText(text);
     }
 }

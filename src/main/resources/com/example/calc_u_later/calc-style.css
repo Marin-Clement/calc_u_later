@@ -1,52 +1,142 @@
 .calculator {
-    -fx-background-color: #f5f5f5;
+    -fx-background-color: #121212;
     -fx-padding: 20;
-    -fx-border-radius: 5;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-border-radius: 10;
 }
 
-.result-field {
-    -fx-font-size: 18px;
-    -fx-max-width: 300px;
-    -fx-pref-height: 50;
-    -fx-background-color: #ffffff;
-    -fx-prompt-text-fill: #808080;
-    -fx-padding: 5;
+.display-field {
+    -fx-background-color: #212121;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-pref-height: 40px;
+    -fx-alignment: center-right;
     -fx-border-radius: 5;
-    -fx-cursor: cursor;
+    -fx-padding: 5;
 }
 
 .number-button {
-    -fx-font-size: 16px;
-    -fx-pref-width: 50;
-    -fx-pref-height: 50;
-    -fx-background-color: #e0e0e0;
-    -fx-text-fill: #000000;
-    -fx-cursor: hand;
-}
-
-.operation-button {
-    -fx-font-size: 16px;
-    -fx-pref-width: 50;
-    -fx-pref-height: 50;
-    -fx-background-color: #ff9933;
+    -fx-background-color: #626262;
     -fx-text-fill: white;
-    -fx-cursor: hand;
+    -fx-font-size: 16px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
 }
 
-.equals-button {
+.number-button:hover {
+    -fx-background-color: #464646;
+}
+
+.number-button:pressed {
+    -fx-background-color: #303030;
+}
+
+.operator-button {
+    -fx-background-color: #ff9500;
+    -fx-text-fill: white;
     -fx-font-size: 16px;
-    -fx-pref-width: 50;
-    -fx-pref-height: 50;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.operator-button:hover {
+    -fx-background-color: #e67e00;
+}
+
+.operator-button:pressed {
+    -fx-background-color: #bf6f00;
+}
+
+.function-button {
+    -fx-background-color: #0e86d4;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.function-button:hover {
+    -fx-background-color: #0b6ea3;
+}
+
+.function-button:pressed {
+    -fx-background-color: #095285;
+}
+
+.other-button {
     -fx-background-color: #4caf50;
     -fx-text-fill: white;
-    -fx-cursor: hand;
+    -fx-font-size: 16px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
 }
 
-.clear-button {
-    -fx-font-size: 16px;
-    -fx-pref-width: 50;
-    -fx-pref-height: 50;
-    -fx-background-color: #f44336;
+.other-button:hover {
+    -fx-background-color: #419944;
+}
+
+.other-button:pressed {
+    -fx-background-color: #398234;
+}
+
+.scientific-button {
+    -fx-background-color: #9c27b0;
     -fx-text-fill: white;
-    -fx-cursor: hand;
+    -fx-font-size: 16px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.scientific-button:hover {
+    -fx-background-color: #8a2387;
+}
+
+.scientific-button:pressed {
+    -fx-background-color: #6a1b65;
+}
+
+.conversion-button {
+    -fx-background-color: #363c57;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-pref-width: 110px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.conversion-button:hover {
+    -fx-background-color: #2e334a;
+}
+
+.conversion-button:pressed {
+    -fx-background-color: #262a3d;
+}
+
+.number-button:disabled, .operator-button:disabled, .function-button:disabled, .other-button:disabled, .scientific-button:disabled, .conversion-button:disabled {
+    -fx-opacity: 0.5;
+}
+
+.number-button:disabled:hover, .operator-button:disabled:hover, .function-button:disabled:hover, .other-button:disabled:hover, .scientific-button:disabled:hover, .conversion-button:disabled:hover {
+    -fx-background-color: #626262;
+}
+
+.number-button:disabled:pressed, .operator-button:disabled:pressed, .function-button:disabled:pressed, .other-button:disabled:pressed, .scientific-button:disabled:pressed, .conversion-button:disabled:pressed {
+    -fx-background-color: #626262;
+}
+
+.button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
