@@ -1,3 +1,6 @@
+/* Calculator Styles */
+
+/* Calculator Container */
 .calculator {
     -fx-background-color: #121212;
     -fx-padding: 20;
@@ -6,6 +9,7 @@
     -fx-border-radius: 10;
 }
 
+/* Display Field */
 .display-field {
     -fx-background-color: #212121;
     -fx-text-fill: white;
@@ -16,6 +20,7 @@
     -fx-padding: 5;
 }
 
+/* Number Buttons */
 .number-button {
     -fx-background-color: #626262;
     -fx-text-fill: white;
@@ -34,6 +39,7 @@
     -fx-background-color: #303030;
 }
 
+/* Operator Buttons */
 .operator-button {
     -fx-background-color: #ff9500;
     -fx-text-fill: white;
@@ -52,6 +58,7 @@
     -fx-background-color: #bf6f00;
 }
 
+/* Function Buttons */
 .function-button {
     -fx-background-color: #0e86d4;
     -fx-text-fill: white;
@@ -70,6 +77,7 @@
     -fx-background-color: #095285;
 }
 
+/* Other Buttons */
 .other-button {
     -fx-background-color: #4caf50;
     -fx-text-fill: white;
@@ -88,6 +96,7 @@
     -fx-background-color: #398234;
 }
 
+/* Scientific Buttons */
 .scientific-button {
     -fx-background-color: #9c27b0;
     -fx-text-fill: white;
@@ -106,6 +115,7 @@
     -fx-background-color: #6a1b65;
 }
 
+/* Conversion Buttons */
 .conversion-button {
     -fx-background-color: #363c57;
     -fx-text-fill: white;
@@ -124,23 +134,41 @@
     -fx-background-color: #262a3d;
 }
 
-.number-button:disabled, .operator-button:disabled, .function-button:disabled, .other-button:disabled, .scientific-button:disabled, .conversion-button:disabled {
+/* Disabled Buttons */
+.number-button:disabled,
+.operator-button:disabled,
+.function-button:disabled,
+.other-button:disabled,
+.scientific-button:disabled,
+.conversion-button:disabled {
     -fx-opacity: 0.5;
 }
 
-.number-button:disabled:hover, .operator-button:disabled:hover, .function-button:disabled:hover, .other-button:disabled:hover, .scientific-button:disabled:hover, .conversion-button:disabled:hover {
+.number-button:disabled:hover,
+.operator-button:disabled:hover,
+.function-button:disabled:hover,
+.other-button:disabled:hover,
+.scientific-button:disabled:hover,
+.conversion-button:disabled:hover {
     -fx-background-color: #626262;
 }
 
-.number-button:disabled:pressed, .operator-button:disabled:pressed, .function-button:disabled:pressed, .other-button:disabled:pressed, .scientific-button:disabled:pressed, .conversion-button:disabled:pressed {
+.number-button:disabled:pressed,
+.operator-button:disabled:pressed,
+.function-button:disabled:pressed,
+.other-button:disabled:pressed,
+.scientific-button:disabled:pressed,
+.conversion-button:disabled:pressed {
     -fx-background-color: #626262;
 }
 
+/* Button Focus */
 .button:focused {
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
 
+/* History Field */
 .history-field {
     -fx-background-color: #212121;
     -fx-min-width: 410px;
@@ -152,6 +180,7 @@
     -fx-padding: 5;
 }
 
+/* List Cell */
 .list-cell {
     -fx-background-color: #212121;
     -fx-text-fill: white;
@@ -169,11 +198,13 @@
     -fx-background-color: #212121;
 }
 
+/* List View Focus */
 .list-view:focused {
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
 
+/* Scroll Bar - Vertical */
 .scroll-bar:vertical {
     -fx-background-color: #121212;
 }
@@ -214,6 +245,7 @@
     -fx-background-color: #303030;
 }
 
+/* Scroll Bar - Horizontal */
 .scroll-bar:horizontal {
     -fx-background-color: #121212;
 }
@@ -254,6 +286,7 @@
     -fx-background-color: #303030;
 }
 
+/* Memory Field */
 .memory-field {
     -fx-background-color: #212121;
     -fx-min-width: 410px;
@@ -265,3 +298,28 @@
     -fx-padding: 5;
 }
 
+/* History and Memory Pane */
+.history-memory-pane *.tab-header-area *.tab-header-background {
+    -fx-background-color: #212121;
+}
+
+.tab {
+    -fx-background-color: #212121;
+    -fx-border-radius: 5;
+}
+
+.tab-label {
+    -fx-text-fill: white;
+}
+
+.tab:hover {
+    -fx-background-color: #1e1e1e;
+}
+
+.tab:pressed {
+    -fx-background-color: #1e1e1e;
+}
+
+.tab:selected {
+    -fx-background-color: #525252;
+}
