@@ -140,3 +140,128 @@
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
+
+.history-field {
+    -fx-background-color: #212121;
+    -fx-min-width: 410px;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-pref-height: 40px;
+    -fx-alignment: center-right;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.list-cell {
+    -fx-background-color: #212121;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-alignment: center-right;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.list-cell:odd {
+    -fx-background-color: #1e1e1e;
+}
+
+.list-cell:even {
+    -fx-background-color: #212121;
+}
+
+.list-view:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: #121212;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #626262;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #464646;
+}
+
+.scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: #303030;
+}
+
+.scroll-bar:vertical .increment-button {
+    -fx-background-color: #626262;
+}
+
+.scroll-bar:vertical .increment-button:hover {
+    -fx-background-color: #464646;
+}
+
+.scroll-bar:vertical .increment-button:pressed {
+    -fx-background-color: #303030;
+}
+
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: #626262;
+}
+
+.scroll-bar:vertical .decrement-button:hover {
+    -fx-background-color: #464646;
+}
+
+.scroll-bar:vertical .decrement-button:pressed {
+    -fx-background-color: #303030;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: #121212;
+}
+
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #626262;
+}
+
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #464646;
+}
+
+.scroll-bar:horizontal .thumb:pressed {
+    -fx-background-color: #303030;
+}
+
+.scroll-bar:horizontal .increment-button {
+    -fx-background-color: #626262;
+}
+
+.scroll-bar:horizontal .increment-button:hover {
+    -fx-background-color: #464646;
+}
+
+.scroll-bar:horizontal .increment-button:pressed {
+    -fx-background-color: #303030;
+}
+
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color: #626262;
+}
+
+.scroll-bar:horizontal .decrement-button:hover {
+    -fx-background-color: #464646;
+}
+
+.scroll-bar:horizontal .decrement-button:pressed {
+    -fx-background-color: #303030;
+}
+
+.memory-field {
+    -fx-background-color: #212121;
+    -fx-min-width: 410px;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-pref-height: 40px;
+    -fx-alignment: center-right;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+

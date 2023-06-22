@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48bb9628-4daf-4dcf-aa5f-5b47b3bfa277" name="Changes" comment="[ADD] Base Calculator : Color + animation">
+    <list default="true" id="48bb9628-4daf-4dcf-aa5f-5b47b3bfa277" name="Changes" comment="[ADD] Base Calculator : Reformat UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calc_u_later/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/calc_u_later/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calc_u_later/CalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/calc_u_later/CalculatorController.java" afterDir="false" />
@@ -181,6 +181,8 @@
       <workItem from="1687166308092" duration="2483000" />
       <workItem from="1687173805395" duration="6000" />
       <workItem from="1687173921357" duration="1740000" />
+      <workItem from="1687340780682" duration="207000" />
+      <workItem from="1687425232322" duration="5863000" />
     </task>
     <task id="LOCAL-00001" summary="[ADD] Base JavaFx : HelloWorldProgram">
       <created>1685967835680</created>
@@ -196,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686089345279</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="[ADD] Base Calculator : Reformat UI">
+      <created>1687179352730</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687179352730</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +237,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[ADD] Base JavaFx : HelloWorldProgram" />
     <MESSAGE value="[ADD] Base Calculator : Color + animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Base Calculator : Color + animation" />
+    <MESSAGE value="[ADD] Base Calculator : Reformat UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Base Calculator : Reformat UI" />
   </component>
 </project>

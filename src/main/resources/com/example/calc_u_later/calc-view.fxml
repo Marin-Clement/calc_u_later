@@ -6,7 +6,12 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.ListView?>
 
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TabPane?>
 <GridPane fx:id="gridPane" alignment="CENTER" hgap="10" styleClass="calculator" stylesheets="@calc-style.css" vgap="10" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calc_u_later.CalculatorController">
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
@@ -31,7 +36,7 @@
     <!-- Operator Buttons -->
     <Button onAction="#handleButtonAction" styleClass="operator-button" text="+" GridPane.columnIndex="5" GridPane.rowIndex="2" />
     <Button onAction="#handleButtonAction" styleClass="operator-button" text="-" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-    <Button onAction="#handleButtonAction" styleClass="operator-button" text="*" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonAction" styleClass="operator-button" text="x" GridPane.columnIndex="5" GridPane.rowIndex="4" />
     <Button onAction="#handleButtonAction" styleClass="operator-button" text="/" GridPane.columnIndex="5" GridPane.rowIndex="5" />
 
     <!-- Function Buttons -->
@@ -59,4 +64,15 @@
 
     <!-- Conversion Buttons -->
     <Button onAction="#handleButtonAction" styleClass="conversion-button" text="Converter" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="6" />
+
+    <!-- History and memory -->
+    <TabPane styleClass="history-memory-pane" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="0"
+             GridPane.rowSpan="7">
+        <Tab text="History" closable="false">
+            <ListView fx:id="history" styleClass="history-field" prefHeight="200.0" prefWidth="200.0"/>
+        </Tab>
+        <Tab text="Memory" closable="false">
+            <ListView fx:id="memoryList" styleClass="memory-field" prefHeight="200.0" prefWidth="200.0"/>
+        </Tab>
+    </TabPane>
 </GridPane>
