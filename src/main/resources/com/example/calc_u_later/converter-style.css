@@ -1,0 +1,79 @@
+/* Calculator Container */
+.converter {
+    -fx-background-color: #121212;
+    -fx-padding: 20;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-border-radius: 10;
+}
+
+/* Display Field */
+.display-field {
+    -fx-background-color: #212121;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-pref-height: 40px;
+    -fx-alignment: center-right;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+/* Convert Buttons */
+.convert-button {
+    -fx-background-color: #626262;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-pref-width: 300px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.convert-button:hover {
+    -fx-background-color: #464646;
+}
+
+.convert-button:pressed {
+    -fx-background-color: #303030;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+.history-memory-pane *.tab-header-area *.tab-header-background {
+    -fx-background-color: #212121;
+}
+
+.tab {
+    -fx-background-color: #212121;
+    -fx-border-radius: 5;
+}
+
+.tab-label {
+    -fx-text-fill: white;
+}
+
+.tab:hover {
+    -fx-background-color: #1e1e1e;
+}
+
+.tab:pressed {
+    -fx-background-color: #1e1e1e;
+}
+
+.tab:selected {
+    -fx-background-color: #525252;
+
+}
+.combo-box{
+    -fx-background-color: #212121;
+    -fx-font-size: 14px;
+    -fx-alignment: center-right;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}

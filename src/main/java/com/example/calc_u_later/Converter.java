@@ -11,6 +11,7 @@ public class Converter extends Application {
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Converter.class.getResource("converter-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),400, 300);
+        scene.getStylesheets().add(Calculator.class.getResource("converter-style.css").toExternalForm());
         primaryStage.setTitle("Calc-U-Later");
         primaryStage.setScene(scene);
         primaryStage.show();
