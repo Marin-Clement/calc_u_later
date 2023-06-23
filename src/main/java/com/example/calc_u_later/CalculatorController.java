@@ -1,10 +1,12 @@
 package com.example.calc_u_later;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -267,9 +269,19 @@ public class CalculatorController {
             stage.setTitle("Converter");
             stage.setResizable(false);
             Scene scene = new Scene(root1);
+            scene.setFill(Color.BLACK);
             scene.getStylesheets().add(Objects.requireNonNull(Calculator.class.getResource("converter-style.css")).toExternalForm());
             stage.setScene(scene);
             stage.show();
+
+            // fade in animation // change background color to black
+            FadeTransition ft = new FadeTransition(Duration.millis(500), root1);
+            ft.setFromValue(0.0);
+            ft.setToValue(1.0);
+            ft.play();
+
+
+
         } catch (Exception e) {
             System.out.println("Can't load new window");
         }

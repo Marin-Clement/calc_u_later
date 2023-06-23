@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48bb9628-4daf-4dcf-aa5f-5b47b3bfa277" name="Changes" comment="[ADD] Back For Scientific Calculator: Memory and history">
+    <list default="true" id="48bb9628-4daf-4dcf-aa5f-5b47b3bfa277" name="Changes" comment="[ADD] Link to converter [FIXED] Memory add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calc_u_later/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/calc_u_later/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calc_u_later/CalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/calc_u_later/CalculatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calc_u_later/Converter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/calc_u_later/calc-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/calc_u_later/calc-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/calc_u_later/calc-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/calc_u_later/calc-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/calc_u_later/converter-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/calc_u_later/converter-style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687431205985</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[ADD] Link to converter [FIXED] Memory add">
+      <created>1687550183809</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687550183809</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,6 +285,7 @@
     <MESSAGE value="[ADD] Base Calculator : Color + animation" />
     <MESSAGE value="[ADD] Base Calculator : Reformat UI" />
     <MESSAGE value="[ADD] Back For Scientific Calculator: Memory and history" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Back For Scientific Calculator: Memory and history" />
+    <MESSAGE value="[ADD] Link to converter [FIXED] Memory add" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Link to converter [FIXED] Memory add" />
   </component>
 </project>
