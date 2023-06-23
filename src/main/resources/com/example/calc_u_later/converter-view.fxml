@@ -7,170 +7,165 @@
 <?import javafx.scene.layout.*?>
 
 <TabPane styleClass="tab" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calc_u_later.ConverterController">
-    <tabs>
-        <Tab text="Degres">
-            <content>
-                <GridPane styleClass="converter" alignment="CENTER" hgap="10.0" vgap="10.0">
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </padding>
+    <Tab text="Degrees">
+        <GridPane styleClass="converter" alignment="CENTER" hgap="10.0" vgap="10.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
 
-                    <Label text="Input:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Label text="Input:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
 
-                    <ComboBox styleClass="combo-box" fx:id="degresInputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                        <items>
-                            <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Celsius" />
-                                <String fx:value="Fahrenheit" />
-                                <String fx:value="Kelvin" />
-                            </FXCollections>
-                        </items>
-                    </ComboBox>
+            <ComboBox styleClass="combo-box" fx:id="degreesInputComboBox" GridPane.columnIndex="1"
+                      GridPane.rowIndex="0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Celsius"/>
+                        <String fx:value="Fahrenheit"/>
+                        <String fx:value="Kelvin"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
 
-                    <Label text="Value:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                    <TextField fx:id="degresTextField" styleClass="display-field" alignment="CENTER" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                    <Label text="Output:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <Label text="Value:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="degreesTextField" styleClass="display-field" alignment="CENTER"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Output:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
 
 
-                    <ComboBox styleClass="combo-box" fx:id="degresOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                        <items>
-                            <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Celsius" />
-                                <String fx:value="Fahrenheit" />
-                                <String fx:value="Kelvin" />
-                            </FXCollections>
-                        </items>
-                    </ComboBox>
+            <ComboBox styleClass="combo-box" fx:id="degreesOutputComboBox" GridPane.columnIndex="1"
+                      GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Celsius"/>
+                        <String fx:value="Fahrenheit"/>
+                        <String fx:value="Kelvin"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
 
-                    <Button onAction="#convertDegrees" styleClass="convert-button" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <Button onAction="#convertDegrees" styleClass="convert-button" text="Convert" GridPane.columnIndex="1"
+                    GridPane.rowIndex="3"/>
 
-                    <Label text="Result:" styleClass="label" GridPane.rowIndex="4"/>
-                    <TextField fx:id="degresResultTextField" styleClass="display-field" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                </GridPane>
-            </content>
-        </Tab>
+            <Label text="Result:" styleClass="label" GridPane.rowIndex="4"/>
+            <TextField fx:id="degreesResultTextField" styleClass="display-field" editable="false"
+                       GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        </GridPane>
+    </Tab>
 
-        <Tab text="Length">
-            <content>
-                <GridPane styleClass="converter" alignment="CENTER" hgap="10.0" vgap="10.0">
-                    <padding>
-                        <Insets bottom="10" left="10" right="10" top="10" />
-                    </padding>
+    <Tab text="Length">
+        <GridPane styleClass="converter" alignment="CENTER" hgap="10.0" vgap="10.0">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10"/>
+            </padding>
 
-                    <Label text="Input:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <ComboBox styleClass="combo-box" fx:id="lengthComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                        <items>
-                            <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Meter" />
-                                <String fx:value="Centimeter" />
-                                <String fx:value="Mile" />
-                                <String fx:value="Inch" />
-                            </FXCollections>
-                        </items>
-                    </ComboBox>
+            <Label text="Input:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox styleClass="combo-box" fx:id="lengthComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Meter"/>
+                        <String fx:value="Centimeter"/>
+                        <String fx:value="Mile"/>
+                        <String fx:value="Inch"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
 
-                    <Label text="Value:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <TextField fx:id="lengthTextField" styleClass="display-field" alignment="CENTER" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Value:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="lengthTextField" styleClass="display-field" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-                    <Label text="Output:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <ComboBox styleClass="combo-box" fx:id="lengthOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                        <items>
-                            <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Meter" />
-                                <String fx:value="Centimeter" />
-                                <String fx:value="Mile" />
-                                <String fx:value="Inch" />
-                            </FXCollections>
-                        </items>
-                    </ComboBox>
-                    <Button onAction="#convertLength" styleClass="convert-button" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Output:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox styleClass="combo-box" fx:id="lengthOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Meter"/>
+                        <String fx:value="Centimeter"/>
+                        <String fx:value="Mile"/>
+                        <String fx:value="Inch"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Button onAction="#convertLength" styleClass="convert-button" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-                    <Label text="Result:" styleClass="label" GridPane.rowIndex="4" />
-                    <TextField fx:id="lengthResultTextField" styleClass="display-field" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                </GridPane>
-            </content>
-        </Tab>
+            <Label text="Result:" styleClass="label" GridPane.rowIndex="4"/>
+            <TextField fx:id="lengthResultTextField" styleClass="display-field" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        </GridPane>
+    </Tab>
 
-        <Tab text="Weight">
-            <content>
-                <GridPane styleClass="converter" alignment="CENTER" hgap="10.0" vgap="10.0">
-                    <padding>
-                        <Insets bottom="10" left="10" right="10" top="10" />
-                    </padding>
+    <Tab text="Weight">
+        <GridPane styleClass="converter" alignment="CENTER" hgap="10.0" vgap="10.0">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10"/>
+            </padding>
 
-                    <Label text="Input:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <ComboBox styleClass="combo-box" fx:id="weightComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                        <items>
-                            <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Gram" />
-                                <String fx:value="Kilogram" />
-                                <String fx:value="Pound" />
-                                <String fx:value="ounces" />
-                            </FXCollections>
-                        </items>
-                    </ComboBox>
+            <Label text="Input:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox styleClass="combo-box" fx:id="weightComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Gram"/>
+                        <String fx:value="Kilogram"/>
+                        <String fx:value="Pound"/>
+                        <String fx:value="ounces"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
 
-                    <Label text="Value:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <TextField fx:id="weightTextField" styleClass="display-field" alignment="CENTER" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Value:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="weightTextField" styleClass="display-field" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-                    <Label text="Output:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <ComboBox styleClass="combo-box" fx:id="weightOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                        <items>
-                            <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Gram" />
-                                <String fx:value="Kilogram" />
-                                <String fx:value="Pound" />
-                                <String fx:value="ounces" />
-                            </FXCollections>
-                        </items>
-                    </ComboBox>
-                    <Button onAction="#convertWeight" styleClass="convert-button" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Output:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox styleClass="combo-box" fx:id="weightOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Gram"/>
+                        <String fx:value="Kilogram"/>
+                        <String fx:value="Pound"/>
+                        <String fx:value="ounces"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Button onAction="#convertWeight" styleClass="convert-button" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-                    <Label text="Result:" styleClass="label" GridPane.rowIndex="4" />
-                    <TextField fx:id="weightResultTextField" styleClass="display-field" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                </GridPane>
-            </content>
-        </Tab>
+            <Label text="Result:" styleClass="label" GridPane.rowIndex="4"/>
+            <TextField fx:id="weightResultTextField" styleClass="display-field" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        </GridPane>
+    </Tab>
 
-        <Tab text="Volumes">
-            <content>
-                <GridPane styleClass="converter" alignment="CENTER" hgap="10.0" vgap="10.0">
-                    <padding>
-                        <Insets bottom="10" left="10" right="10" top="10" />
-                    </padding>
+    <Tab text="Volumes">
+        <GridPane styleClass="converter" alignment="CENTER" hgap="10.0" vgap="10.0">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10"/>
+            </padding>
 
-                    <Label text="Input:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <ComboBox styleClass="combo-box" fx:id="volumeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                        <items>
-                            <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Liter" />
-                                <String fx:value="Cubic" />
-                                <String fx:value="Gallon" />
-                                <String fx:value="Cubic feet" />
-                            </FXCollections>
-                        </items>
-                    </ComboBox>
+            <Label text="Input:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox styleClass="combo-box" fx:id="volumeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Liter"/>
+                        <String fx:value="Cubic"/>
+                        <String fx:value="Gallon"/>
+                        <String fx:value="Cubic feet"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
 
-                    <Label text="Value:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <TextField fx:id="volumeTextField" styleClass="display-field" alignment="CENTER" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Value:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="volumeTextField" styleClass="display-field" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-                    <Label text="Output:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <ComboBox styleClass="combo-box" fx:id="volumeOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                        <items>
-                            <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Liter" />
-                                <String fx:value="Cubic" />
-                                <String fx:value="Gallon" />
-                                <String fx:value="Cubic feet" />
-                            </FXCollections>
-                        </items>
-                    </ComboBox>
-                    <Button onAction="#convertVolume" styleClass="convert-button" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Output:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox styleClass="combo-box" fx:id="volumeOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Liter"/>
+                        <String fx:value="Cubic"/>
+                        <String fx:value="Gallon"/>
+                        <String fx:value="Cubic feet"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Button onAction="#convertVolume" styleClass="convert-button" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-                    <Label text="Result:" styleClass="label" GridPane.rowIndex="4" />
-                    <TextField fx:id="volumeResultTextField" styleClass="display-field" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                </GridPane>
-            </content>
-        </Tab>
-    </tabs>
+            <Label text="Result:" styleClass="label" GridPane.rowIndex="4"/>
+            <TextField fx:id="volumeResultTextField" styleClass="display-field" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        </GridPane>
+    </Tab>
 </TabPane>

@@ -17,7 +17,6 @@ import javafx.util.Duration;
 import java.util.Objects;
 
 public class CalculatorController {
-    // FXML elements
     @FXML
     private TextField display;
 
@@ -27,7 +26,6 @@ public class CalculatorController {
     @FXML
     private ListView<String> memoryList;
 
-    // Variables for calculator operations
     private double operand1;
     private double operand2;
     private String operator;
@@ -37,7 +35,6 @@ public class CalculatorController {
 
     @FXML
     private void initialize() {
-        // Initialize variables
         operand1 = 0;
         operand2 = 0;
         operator = "";
@@ -46,12 +43,10 @@ public class CalculatorController {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        // Handle button clicks
         Button button = (Button) event.getSource();
         String buttonText = button.getText();
         String displayText = display.getText();
 
-        // Play animation for buttons
         ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(100), button);
         scaleTransition.setFromX(1.0);
         scaleTransition.setFromY(1.0);
@@ -61,51 +56,23 @@ public class CalculatorController {
         scaleTransition.setCycleCount(2);
         scaleTransition.play();
 
-
-        // Perform different actions based on the clicked button
         switch (buttonText) {
-            // Clear the display and reset variables
             case "CE" -> clearDisplay();
-
-            // Negate the display value (change sign)
             case "+/-" -> negateDisplay();
-
-            // Add decimal point to the display value
             case "." -> addDecimalPoint();
-
-            // Handle basic arithmetic operators (+, -, x, /)
             case "+", "-", "x", "/" -> handleOperatorButton(buttonText, displayText);
-
-            // Calculate percentage
             case "P" -> calculatePercentage(displayText);
-
-            // Calculate trigonometric functions (sin, cos, tan)
             case "sin", "cos", "tan" -> calculateTrigonometricFunction(buttonText, displayText);
-
-            // Calculate inverse trigonometric functions (asin, acos, atan)
             case "asin", "acos", "atan" -> calculateInverseTrigonometricFunction(buttonText, displayText);
-
-            // Calculate square root or square
             case "sqrt", "sqr" -> calculateSquareRootOrSquare(buttonText, displayText);
-
-            // Calculate logarithm (log, ln)
             case "log", "ln" -> calculateLogarithm(buttonText, displayText);
-
-            // Handle memory operations (M+, MR, MC)
             case "M+", "MR", "MC" -> handleMemoryButton(buttonText, displayText);
-
-            // Calculate and display the result
             case "=" -> calculateResult(displayText);
-
-            // Open the converter window
             case "Converter" -> openConverter();
-
-            // Append the clicked button text to the display
             default -> appendToDisplay(buttonText, displayText);
         }
     }
 
-    // Clear the display and reset variables
     private void clearDisplay() {
         display.setText("");
         operand1 = 0;
@@ -114,7 +81,6 @@ public class CalculatorController {
         isOperatorClicked = false;
     }
 
-    // Negate the display value (change sign)
     private void negateDisplay() {
         String displayText = display.getText();
         if (displayText.length() > 0) {
@@ -126,7 +92,6 @@ public class CalculatorController {
         }
     }
 
-    // Add decimal point to the display value
     private void addDecimalPoint() {
         String displayText = display.getText();
         if (displayText.length() > 0 && !displayText.contains(".")) {
@@ -134,21 +99,14 @@ public class CalculatorController {
         }
     }
 
-    // Handle arithmetic operator button clicks
     private void handleOperatorButton(String buttonText, String displayText) {
         if (displayText.length() > 0) {
-            if (operand1 != 0) {
-                operand2 = Double.parseDouble(displayText);
-                calculateResult(displayText);
-            } else {
-                operand1 = Double.parseDouble(displayText);
-            }
+            operand1 = Double.parseDouble(displayText);
             operator = buttonText;
             isOperatorClicked = true;
         }
     }
 
-    // Calculate percentage
     private void calculatePercentage(String displayText) {
         if (displayText.length() > 0) {
             operand1 = Double.parseDouble(displayText);
@@ -158,7 +116,6 @@ public class CalculatorController {
         }
     }
 
-    // Calculate trigonometric functions (sin, cos, tan)
     private void calculateTrigonometricFunction(String buttonText, String displayText) {
         if (displayText.length() > 0) {
             operand1 = Double.parseDouble(displayText);
@@ -172,7 +129,6 @@ public class CalculatorController {
         }
     }
 
-    // Calculate inverse trigonometric functions (asin, acos, atan)
     private void calculateInverseTrigonometricFunction(String buttonText, String displayText) {
         if (displayText.length() > 0) {
             operand1 = Double.parseDouble(displayText);
@@ -186,7 +142,6 @@ public class CalculatorController {
         }
     }
 
-    // Calculate square root or square
     private void calculateSquareRootOrSquare(String buttonText, String displayText) {
         if (displayText.length() > 0) {
             operand1 = Double.parseDouble(displayText);
@@ -199,7 +154,6 @@ public class CalculatorController {
         }
     }
 
-    // Calculate logarithm (log, ln)
     private void calculateLogarithm(String buttonText, String displayText) {
         if (displayText.length() > 0) {
             operand1 = Double.parseDouble(displayText);
@@ -212,7 +166,6 @@ public class CalculatorController {
         }
     }
 
-    // Handle memory operations (M+, MR, MC)
     private void handleMemoryButton(String buttonText, String displayText) {
         if (displayText.length() > 0) {
             operand1 = Double.parseDouble(displayText);
@@ -233,7 +186,6 @@ public class CalculatorController {
         }
     }
 
-    // Calculate and display the result
     private void calculateResult(String displayText) {
         if (displayText.length() > 0) {
             operand2 = Double.parseDouble(displayText);
@@ -245,12 +197,9 @@ public class CalculatorController {
             }
             display.setText(String.valueOf(result));
             history.getItems().add(operand1 + " " + operator + " " + operand2 + " = " + result);
-            operand1 = result;
         }
     }
 
-
-    // Append the clicked button text to the display
     private void appendToDisplay(String buttonText, String displayText) {
         if (isOperatorClicked) {
             display.setText(buttonText);
@@ -260,7 +209,6 @@ public class CalculatorController {
         }
     }
 
-    // Open the converter window
     private void openConverter() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("converter-view.fxml"));
@@ -274,14 +222,10 @@ public class CalculatorController {
             stage.setScene(scene);
             stage.show();
 
-            // fade in animation // change background color to black
             FadeTransition ft = new FadeTransition(Duration.millis(500), root1);
             ft.setFromValue(0.0);
             ft.setToValue(1.0);
             ft.play();
-
-
-
         } catch (Exception e) {
             System.out.println("Can't load new window");
         }

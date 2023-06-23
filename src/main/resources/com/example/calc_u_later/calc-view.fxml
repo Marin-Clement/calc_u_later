@@ -11,7 +11,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TabPane?>
 
-<GridPane fx:id="gridPane" alignment="CENTER" hgap="10" styleClass="calculator" stylesheets="@calc-style.css" vgap="10" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calc_u_later.CalculatorController">
+<GridPane alignment="CENTER" hgap="10" styleClass="calculator" stylesheets="@calc-style.css" vgap="10" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calc_u_later.CalculatorController">
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>

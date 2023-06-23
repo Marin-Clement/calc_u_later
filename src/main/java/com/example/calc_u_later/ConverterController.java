@@ -7,13 +7,13 @@ import javafx.scene.control.TextField;
 public class ConverterController {
 
     @FXML
-    private ComboBox<String> degresInputComboBox;
+    private ComboBox<String> degreesInputComboBox;
     @FXML
-    private TextField degresTextField;
+    private TextField degreesTextField;
     @FXML
-    private ComboBox<String> degresOutputComboBox;
+    private ComboBox<String> degreesOutputComboBox;
     @FXML
-    private TextField degresResultTextField;
+    private TextField degreesResultTextField;
 
     @FXML
     private ComboBox<String> lengthComboBox;
@@ -44,55 +44,44 @@ public class ConverterController {
 
     @FXML
     private void convertDegrees() {
-        String inputUnit = degresInputComboBox.getValue();
-        String outputUnit = degresOutputComboBox.getValue();
-        String inputValue = degresTextField.getText();
+        String inputUnit = degreesInputComboBox.getValue();
+        String outputUnit = degreesOutputComboBox.getValue();
+        String inputValue = degreesTextField.getText();
 
-        // Vérifier que les champs requis sont sélectionnés ou remplis
         if (inputUnit == null || outputUnit == null || inputValue.isEmpty()) {
-            degresResultTextField.setText("Invalid input");
+            degreesResultTextField.setText("Invalid input");
             return;
         }
 
         try {
             double input = Double.parseDouble(inputValue);
             double buffer;
-            double result = 0;
+            double result;
 
             switch (inputUnit) {
-                case "Celsius":
-                    buffer = input;
-                    break;
-                case "Kelvin":
-                    buffer = kelvinToCelsius(input);
-                    break;
-                case "Fahrenheit":
-                    buffer = fahrenheitToCelsius(input);
-                    break;
-                default:
-                    degresResultTextField.setText("Conversion not supported");
+                case "Celsius" -> buffer = input;
+                case "Kelvin" -> buffer = kelvinToCelsius(input);
+                case "Fahrenheit" -> buffer = fahrenheitToCelsius(input);
+                default -> {
+                    degreesResultTextField.setText("Conversion not supported");
                     return;
+                }
             }
 
             switch (outputUnit) {
-                case "Celsius":
-                    result = buffer;
-                    break;
-                case "Kelvin":
-                    result = celsiusToKelvin(buffer);
-                    break;
-                case "Fahrenheit":
-                    result = celsiusToFahrenheit(buffer);
-                    break;
-                default:
-                    degresResultTextField.setText("Conversion not supported");
+                case "Celsius" -> result = buffer;
+                case "Kelvin" -> result = celsiusToKelvin(buffer);
+                case "Fahrenheit" -> result = celsiusToFahrenheit(buffer);
+                default -> {
+                    degreesResultTextField.setText("Conversion not supported");
                     return;
+                }
             }
 
-            degresResultTextField.setText(String.valueOf(result));
+            degreesResultTextField.setText(String.valueOf(result));
 
         } catch (NumberFormatException e) {
-            degresResultTextField.setText("Invalid input");
+            degreesResultTextField.setText("Invalid input");
         }
     }
 
@@ -118,7 +107,6 @@ public class ConverterController {
         String outputUnit = lengthOutputComboBox.getValue();
         String inputValue = lengthTextField.getText();
 
-        // Vérifier que les champs requis sont sélectionnés ou remplis
         if (inputUnit == null || outputUnit == null || inputValue.isEmpty()) {
             lengthResultTextField.setText("Invalid input");
             return;
@@ -127,42 +115,28 @@ public class ConverterController {
         try {
             double input = Double.parseDouble(inputValue);
             double buffer;
-            double result = 0;
+            double result;
 
             switch (inputUnit) {
-                case "Meter":
-                    buffer = input;
-                    break;
-                case "Centimeter":
-                    buffer = centimeterToMeter(input);
-                    break;
-                case "Mile":
-                    buffer = mileToMeter(input);
-                    break;
-                case "Inch":
-                    buffer = inchToMeter(input);
-                    break;
-                default:
+                case "Meter" -> buffer = input;
+                case "Centimeter" -> buffer = centimeterToMeter(input);
+                case "Mile" -> buffer = mileToMeter(input);
+                case "Inch" -> buffer = inchToMeter(input);
+                default -> {
                     lengthResultTextField.setText("Conversion not supported");
                     return;
+                }
             }
 
             switch (outputUnit) {
-                case "Meter":
-                    result = buffer;
-                    break;
-                case "Centimeter":
-                    result = meterToCentimeter(buffer);
-                    break;
-                case "Mile":
-                    result = meterToMile(buffer);
-                    break;
-                case "Inch":
-                    result = meterToInch(buffer);
-                    break;
-                default:
+                case "Meter" -> result = buffer;
+                case "Centimeter" -> result = meterToCentimeter(buffer);
+                case "Mile" -> result = meterToMile(buffer);
+                case "Inch" -> result = meterToInch(buffer);
+                default -> {
                     lengthResultTextField.setText("Conversion not supported");
                     return;
+                }
             }
 
             lengthResultTextField.setText(String.valueOf(result));
@@ -196,14 +170,12 @@ public class ConverterController {
         return meter / 0.0254;
     }
 
-
     @FXML
     private void convertWeight() {
         String inputUnit = weightComboBox.getValue();
         String outputUnit = weightOutputComboBox.getValue();
         String inputValue = weightTextField.getText();
 
-        // Vérifier que les champs requis sont sélectionnés ou remplis
         if (inputUnit == null || outputUnit == null || inputValue.isEmpty()) {
             weightResultTextField.setText("Invalid input");
             return;
@@ -212,42 +184,28 @@ public class ConverterController {
         try {
             double input = Double.parseDouble(inputValue);
             double buffer;
-            double result = 0;
+            double result;
 
             switch (inputUnit) {
-                case "Gram":
-                    buffer = input;
-                    break;
-                case "Kilogram":
-                    buffer = kilogramToGram(input);
-                    break;
-                case "Pound":
-                    buffer = poundToGram(input);
-                    break;
-                case "ounces":
-                    buffer = ouncesToGram(input);
-                    break;
-                default:
+                case "Gram" -> buffer = input;
+                case "Kilogram" -> buffer = kilogramToGram(input);
+                case "Pound" -> buffer = poundToGram(input);
+                case "ounces" -> buffer = ouncesToGram(input);
+                default -> {
                     weightResultTextField.setText("Conversion not supported");
                     return;
+                }
             }
 
             switch (outputUnit) {
-                case "Gram":
-                    result = buffer;
-                    break;
-                case "Kilogram":
-                    result = gramToKilogram(buffer);
-                    break;
-                case "Pound":
-                    result = gramToPound(buffer);
-                    break;
-                case "ounces":
-                    result = gramToOunces(buffer);
-                    break;
-                default:
+                case "Gram" -> result = buffer;
+                case "Kilogram" -> result = gramToKilogram(buffer);
+                case "Pound" -> result = gramToPound(buffer);
+                case "ounces" -> result = gramToOunces(buffer);
+                default -> {
                     weightResultTextField.setText("Conversion not supported");
                     return;
+                }
             }
 
             weightResultTextField.setText(String.valueOf(result));
@@ -280,13 +238,13 @@ public class ConverterController {
     private double gramToOunces(double gram) {
         return gram / 28.3495;
     }
+
     @FXML
     private void convertVolume() {
         String inputUnit = volumeComboBox.getValue();
         String outputUnit = volumeOutputComboBox.getValue();
         String inputValue = volumeTextField.getText();
 
-        // Vérifier que les champs requis sont sélectionnés ou remplis
         if (inputUnit == null || outputUnit == null || inputValue.isEmpty()) {
             volumeResultTextField.setText("Invalid input");
             return;
@@ -295,42 +253,28 @@ public class ConverterController {
         try {
             double input = Double.parseDouble(inputValue);
             double buffer;
-            double result = 0;
+            double result;
 
             switch (inputUnit) {
-                case "Liter":
-                    buffer = input;
-                    break;
-                case "Cubic":
-                    buffer = cubicToLiter(input);
-                    break;
-                case "Gallon":
-                    buffer = gallonToLiter(input);
-                    break;
-                case "Cubic feet":
-                    buffer = cubicFeetToLiter(input);
-                    break;
-                default:
+                case "Liter" -> buffer = input;
+                case "Milliliter" -> buffer = milliliterToLiter(input);
+                case "Gallon" -> buffer = gallonToLiter(input);
+                case "Cubic Inch" -> buffer = cubicInchToLiter(input);
+                default -> {
                     volumeResultTextField.setText("Conversion not supported");
                     return;
+                }
             }
 
             switch (outputUnit) {
-                case "Liter":
-                    result = buffer;
-                    break;
-                case "Cubic":
-                    result = literToCubic(buffer);
-                    break;
-                case "Gallon":
-                    result = literToGallon(buffer);
-                    break;
-                case "Cubic feet":
-                    result = literToCubicFeet(buffer);
-                    break;
-                default:
+                case "Liter" -> result = buffer;
+                case "Milliliter" -> result = literToMilliliter(buffer);
+                case "Gallon" -> result = literToGallon(buffer);
+                case "Cubic Inch" -> result = literToCubicInch(buffer);
+                default -> {
                     volumeResultTextField.setText("Conversion not supported");
                     return;
+                }
             }
 
             volumeResultTextField.setText(String.valueOf(result));
@@ -340,12 +284,12 @@ public class ConverterController {
         }
     }
 
-    private double cubicToLiter(double cubic) {
-        return cubic * 1000;
+    private double milliliterToLiter(double milliliter) {
+        return milliliter / 1000;
     }
 
-    private double literToCubic(double liter) {
-        return liter / 1000;
+    private double literToMilliliter(double liter) {
+        return liter * 1000;
     }
 
     private double gallonToLiter(double gallon) {
@@ -356,12 +300,11 @@ public class ConverterController {
         return liter / 3.78541;
     }
 
-    private double cubicFeetToLiter(double cubicFeet) {
-        return cubicFeet * 28.3168;
+    private double cubicInchToLiter(double cubicInch) {
+        return cubicInch * 0.0163871;
     }
 
-    private double literToCubicFeet(double liter) {
-        return liter / 28.3168;
+    private double literToCubicInch(double liter) {
+        return liter / 0.0163871;
     }
-
 }
