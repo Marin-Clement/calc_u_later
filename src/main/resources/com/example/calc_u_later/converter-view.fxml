@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calc_u_later.ConverterController">
+    <tabs>
+        <Tab text="Degres">
+            <content>
+                <GridPane alignment="CENTER">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+
+                    <Label text="Input:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+                    <ComboBox fx:id="degresInputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Celsius" />
+                                <String fx:value="Fahrenheit" />
+                                <String fx:value="Kelvin" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+
+                    <Label text="Value:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="degresTextField" alignment="CENTER" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Output:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="degresOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Celsius" />
+                                <String fx:value="Fahrenheit" />
+                                <String fx:value="Kelvin" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+
+                    <Button onAction="#convertDegrees" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Result:" GridPane.rowIndex="4" />
+                    <TextField fx:id="degresResultTextField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                </GridPane>
+            </content>
+        </Tab>
+
+        <Tab text="Length">
+            <content>
+                <GridPane alignment="CENTER">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+
+                    <Label text="Input:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="lengthComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Meter" />
+                                <String fx:value="Centimeter" />
+                                <String fx:value="Mile" />
+                                <String fx:value="Inch" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+
+                    <Label text="Value:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="lengthTextField" alignment="CENTER" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Output:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="lengthOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Meter" />
+                                <String fx:value="Centimeter" />
+                                <String fx:value="Mile" />
+                                <String fx:value="Inch" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <Button onAction="#convertLength" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Result:" GridPane.rowIndex="4" />
+                    <TextField fx:id="lengthResultTextField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                </GridPane>
+            </content>
+        </Tab>
+
+        <Tab text="Weight">
+            <content>
+                <GridPane alignment="CENTER">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+
+                    <Label text="Input:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="weightComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Gram" />
+                                <String fx:value="Kilogram" />
+                                <String fx:value="Pound" />
+                                <String fx:value="ounces" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+
+                    <Label text="Value:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="weightTextField" alignment="CENTER" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Output:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="weightOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Gram" />
+                                <String fx:value="Kilogram" />
+                                <String fx:value="Pound" />
+                                <String fx:value="ounces" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <Button onAction="#convertWeight" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Result:" GridPane.rowIndex="4" />
+                    <TextField fx:id="weightResultTextField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                </GridPane>
+            </content>
+        </Tab>
+
+        <Tab text="Volumes">
+            <content>
+                <GridPane alignment="CENTER">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+
+                    <Label text="Input:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="volumeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Liter" />
+                                <String fx:value="Cubic" />
+                                <String fx:value="Gallon" />
+                                <String fx:value="Cubic feet" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+
+                    <Label text="Value:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="volumeTextField" alignment="CENTER" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Output:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="volumeOutputComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Liter" />
+                                <String fx:value="Cubic" />
+                                <String fx:value="Gallon" />
+                                <String fx:value="Cubic feet" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <Button onAction="#convertVolume" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Result:" GridPane.rowIndex="4" />
+                    <TextField fx:id="volumeResultTextField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                </GridPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

@@ -2,9 +2,16 @@ package com.example.calc_u_later;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.application.Application;
+import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+
+import java.util.Stack;
 
 public class CalculatorController {
     @FXML
@@ -49,6 +56,7 @@ public class CalculatorController {
             case "log", "ln" -> calculateLogarithm(buttonText, displayText);
             case "M+", "MR", "MC" -> handleMemoryButton(buttonText, displayText);
             case "=" -> calculateResult(displayText);
+            case "Converter" -> openConverter();
             default -> appendToDisplay(buttonText, displayText);
         }
     }
@@ -187,5 +195,9 @@ public class CalculatorController {
         } else {
             display.setText(displayText + buttonText);
         }
+    }
+
+    private void openConverter(){
+        System.out.println("oui");
     }
 }
